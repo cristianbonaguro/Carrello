@@ -83,7 +83,7 @@
         <button><a href="carrello.php?action=svuota">SVUOTA IL CARRELLO</a></button>
         </div>
         <div class="btn">
-        <button><a href="ricevuta.php">COMPLETA ACQUISTO</a></button>
+        <button><a href="form.php">COMPLETA ACQUISTO</a></button>
         </div>
         </div>
     </div>

@@ -1,9 +1,17 @@
 <?php
     session_start();
 
-    if(isset($_SESSION['spesa']))
-    if($_SESSION['spesa']==0)
-    header("Location: carrello.php");
+
+    $email = $_POST['email'];
+
+    setcookie("email", $_POST['email'], time() + (86400 * 30), "/");
+    setcookie("address", $_POST['adress'], time() + (86400 * 30), "/");
+    setcookie("numcivico", $_POST['numcivico'], time() + (86400 * 30), "/");
+    setcookie("cap", $_POST['cap'], time() + (86400 * 30), "/");
+    setcookie("nc", $_POST['nc'], time() + (86400 * 30), "/");
+    setcookie("nsc", $_POST['nsc'], time() + (86400 * 30), "/");
+    setcookie("ds", $_POST['ds'], time() + (86400 * 30), "/");
+    setcookie("cds", $_POST['cds'], time() + (86400 * 30), "/");
 
 ?>
 
@@ -38,7 +46,7 @@
     <div class="cart">
         <div class="tot red">
         <div class="prezzo">
-            <h2>LA RINGRAZIAMO PER IL SUO ACQUISTO LE VERRA' INVIATA UN EMAIL DI CONFERMA ALL' INDIRIZZO : cricri070605@gmail.com </h2>
+            <h2>LA RINGRAZIAMO PER IL SUO ACQUISTO LE VERRA' INVIATA UN EMAIL DI CONFERMA ALL' INDIRIZZO : <?php echo $email?></h2>
             <br>
         <h1> <?php echo "SPESA TOTALE : ".$_SESSION['spesa']." €"; ?> </h1>
         </div>
