@@ -1,8 +1,13 @@
 <?php
     session_start();
 
+    
+    if(!isset($_SESSION['active_login']))
+        header("Location: login.php");
 
     $email = $_POST['email'];
+
+    mail($_POST['email'],'libropoly@gmail.com',"Egregio/a ". $_SESSION['active_login'] . " la ringraziamo, per il suo acquisto.Libropoly");
 
     setcookie("email", $_POST['email'], time() + (86400 * 30), "/");
     setcookie("address", $_POST['adress'], time() + (86400 * 30), "/");

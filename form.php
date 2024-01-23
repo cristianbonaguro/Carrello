@@ -6,6 +6,10 @@
     if($_SESSION['spesa']==0)
     header("Location: carrello.php");
 
+    
+    if(!isset($_SESSION['active_login']))
+        header("Location: login.php");
+
 ?>
 
 <!DOCTYPE html>
